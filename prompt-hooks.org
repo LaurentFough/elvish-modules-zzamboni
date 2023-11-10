@@ -15,13 +15,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install github.com/zzamboni/elvish-modules
+epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/prompt-hooks
+use github.com/LaurentFough/elvish-modules-zzamboni/prompt-hooks
 #+end_src
 
 =$edit:before-readline= hooks are executed before right after the prompt is shown. =$edit:after-readline= hooks are executed after the user presses Enter, before the command is executed. The typed command is passed as argument to =after-readline= hooks.

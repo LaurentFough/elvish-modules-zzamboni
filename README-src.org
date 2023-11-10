@@ -5,7 +5,7 @@
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 
-This Elvish package contains various modules I have written for the [[https://elv.sh/][Elvish shell]]. [[https://github.com/zzamboni/elvish-themes/][Themes]] and [[https://github.com/zzamboni/elvish-completions][completions]] are kept in separate packages.
+This Elvish package contains various modules I have written for the [[https://elv.sh/][Elvish shell]]. [[https://github.com/LaurentFough/elvish-themes/][Themes]] and [[https://github.com/LaurentFough/elvish-completions][completions]] are kept in separate packages.
 
 * Compatibility
 
@@ -17,13 +17,13 @@ To install, use [[https://elvish.io/ref/epm.html][epm]]:
 
 #+begin_src elvish
   use epm
-  epm:install github.com/zzamboni/elvish-modules
+  epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 For each module you want to use, you need to add the following to your =rc.elv= file:
 
 #+begin_src elvish
-  use github.com/zzamboni/elvish-modules/<modulename>
+  use github.com/LaurentFough/elvish-modules-zzamboni/<modulename>
 #+end_src
 
 See each module's page for detailed usage instructions.

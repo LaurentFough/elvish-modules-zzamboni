@@ -17,13 +17,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
   use epm
-  epm:install github.com/zzamboni/elvish-modules
+  epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-  use github.com/zzamboni/elvish-modules/opsgenie
+  use github.com/LaurentFough/elvish-modules-zzamboni/opsgenie
 #+end_src
 
 You need to specify your API key so that it can be used in the requests:
@@ -34,7 +34,7 @@ You need to specify your API key so that it can be used in the requests:
 
 =opsgenie:admins= returns a map containing the users which have =admin= role in their teams as keys, with the value being the team in which they have that role.
 
-#+begin_src elvish :use private,github.com/zzamboni/elvish-modules/opsgenie
+#+begin_src elvish :use private,github.com/LaurentFough/elvish-modules-zzamboni/opsgenie
   opsgenie:admins
 #+end_src
 

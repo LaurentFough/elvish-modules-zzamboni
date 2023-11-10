@@ -38,13 +38,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install github.com/zzamboni/elvish-modules
+epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module and call =iterm2:init= to enable the integration:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/iterm2
+use github.com/LaurentFough/elvish-modules-zzamboni/iterm2
 #+end_src
 
 If the [[https://iterm2.com/documentation-utilities.html][iTerm2 utilities]] are installed in their default location of =~/.iterm2=, that directory will be added automatically to the path. Note that some of the functionality provided by the utilities is also provided by functions in this module.

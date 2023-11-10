@@ -20,13 +20,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
   use epm
-  epm:install &silent-if-installed github.com/zzamboni/elvish-modules
+  epm:install &silent-if-installed github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-  use github.com/zzamboni/elvish-modules/<module>
+  use github.com/LaurentFough/elvish-modules-zzamboni/<module>
 #+end_src
 
 ** What is this for?
@@ -34,7 +34,7 @@ In your =rc.elv=, load this module:
 This module came up from the need to have environment variables that get defined by either time-consuming or interactive actions, and which you only need to execute when needed. The original use case was to use the [[file:1pass.org][1pass]] module to fetch API tokens from 1Password. Since the 1Password =op= utility may ask for the user's passphrase when needed, the idea is to fetch those values only when they are going to be used. For example, for the =brew= command, I need the =HOMEBREW_GITHUB_API_TOKEN= environment variable, so I have the following in my config file:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/lazy-vars
+use github.com/LaurentFough/elvish-modules-zzamboni/lazy-vars
 
 lazy-vars:add-var HOMEBREW_GITHUB_API_TOKEN { 1pass:get-password "github api token for homebrew" }
 lazy-vars:add-alias brew [ HOMEBREW_GITHUB_API_TOKEN ]
@@ -57,7 +57,7 @@ elvish
 You can define a "lazy variable" using the =lazy-vars:add-var= function, which receives the name of the variable and a lambda which must return or output a single value, which will be assigned to the variable. You can later evaluate the variable using the =lazy-vars:eval-var= function, which receives the name of the variable:
 
 #+begin_src console
-[~]> use github.com/zzamboni/elvish-modules/lazy-vars
+[~]> use github.com/LaurentFough/elvish-modules-zzamboni/lazy-vars
 [~]> lazy-vars:add-var DATE { date }
 [~]> put $E:DATE
 ▶ ''
@@ -96,7 +96,7 @@ You can define commands that require certain environment variables to be evaluat
 Note that this works only for external commands for now, Elvish functions cannot be wrapped yet (let me know if you would find this useful).
 
 #+begin_src console
-[~]> use github.com/zzamboni/elvish-modules/lazy-vars
+[~]> use github.com/LaurentFough/elvish-modules-zzamboni/lazy-vars
 [~]> lazy-vars:add-var DATE { date }
 [~]> cat > ~/bin/testdate
 #!/usr/local/bin/elvish

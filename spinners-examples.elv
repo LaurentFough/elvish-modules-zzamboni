@@ -1,4 +1,4 @@
-use github.com/zzamboni/elvish-modules/spinners
+use github.com/LaurentFough/elvish-modules-zzamboni/spinners
 
 spinners:run { sleep 3 }
 

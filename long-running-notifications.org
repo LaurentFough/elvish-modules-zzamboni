@@ -22,13 +22,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
   use epm
-  epm:install github.com/zzamboni/elvish-modules
+  epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-  use github.com/zzamboni/elvish-modules/long-running-notifications
+  use github.com/LaurentFough/elvish-modules-zzamboni/long-running-notifications
 #+end_src
 
 Try it out! Run the following command:
@@ -71,7 +71,7 @@ By default, the module tries to determine the best notification method to use ba
     }
   #+end_src
 
-If you write a new notification mechanism which you think might be useful to others, please submit a [[https://github.com/zzamboni/elvish-modules/pulls][pull request]]!
+If you write a new notification mechanism which you think might be useful to others, please submit a [[https://github.com/LaurentFough/elvish-modules-zzamboni/pulls][pull request]]!
 
 * Implementation
 :PROPERTIES:

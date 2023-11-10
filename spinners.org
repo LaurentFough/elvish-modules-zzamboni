@@ -29,17 +29,17 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install &silent-if-installed github.com/zzamboni/elvish-modules
+epm:install &silent-if-installed github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/spinners
+use github.com/LaurentFough/elvish-modules-zzamboni/spinners
 #+end_src
 
 #+begin_src elvish :tangle spinners-examples.elv :export none
-use github.com/zzamboni/elvish-modules/spinners
+use github.com/LaurentFough/elvish-modules-zzamboni/spinners
 #+end_src
 ** Available spinners
 
@@ -49,7 +49,7 @@ The spinner definitions are taken from the [[https://github.com/sindresorhus/cli
 
 You can get the list of available spinners using the =spinners:list= function.
 
-#+begin_src elvish :use github.com/zzamboni/elvish-modules/spinners :exports both
+#+begin_src elvish :use github.com/LaurentFough/elvish-modules-zzamboni/spinners :exports both
 spinners:list | take 5
 #+end_src
 
@@ -180,7 +180,7 @@ During the execution of a spinner, the =spinners:persist= function can be used t
 #+begin_src elvish
   use str
   use path
-  use github.com/zzamboni/elvish-modules/tty
+  use github.com/LaurentFough/elvish-modules-zzamboni/tty
 #+end_src
 
 ** Initialization

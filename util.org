@@ -45,13 +45,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install github.com/zzamboni/elvish-modules
+epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/util
+use github.com/LaurentFough/elvish-modules-zzamboni/util
 #+end_src
 
 The following functions are included:
@@ -60,7 +60,7 @@ The following functions are included:
 
 =util:dotify-string= shortens a string to a maximum length, followed by dots.
 
-#+begin_src elvish :use github.com/zzamboni/elvish-modules/util :exports both
+#+begin_src elvish :use github.com/LaurentFough/elvish-modules-zzamboni/util :exports both
 util:dotify-string somelongstring 5
 #+end_src
 
@@ -71,7 +71,7 @@ util:dotify-string somelongstring 5
 
 =util:pipesplit= does parallel redirection of stdout and stderr to different commands. It takes three lambdas: The first one is executed, its stdout is redirected to the second one, and its stderr to the third one.
 
-#+begin_src elvish :use github.com/zzamboni/elvish-modules/util :exports both
+#+begin_src elvish :use github.com/LaurentFough/elvish-modules-zzamboni/util :exports both
 util:pipesplit { echo stdout-test; echo stderr-test >&2 } { echo STDOUT: (cat) } { echo STDERR: (cat) }
 #+end_src
 
@@ -83,7 +83,7 @@ util:pipesplit { echo stdout-test; echo stderr-test >&2 } { echo STDOUT: (cat) }
 
 =util:readline= reads a line from the current input pipe, until the first end of line. Depending on the version of Elvish you have, it either uses an external command, or an internal function, but the result is the same.
 
-#+begin_src elvish :exports both :use github.com/zzamboni/elvish-modules/util
+#+begin_src elvish :exports both :use github.com/LaurentFough/elvish-modules-zzamboni/util
 echo "hi there\nhow are you" | util:readline
 #+end_src
 
@@ -96,7 +96,7 @@ echo "hi there\nhow are you" | util:readline
 - =&nostrip=: whether to strip the EOL character from the end of the string. Defaults to =$false=, which means the EOL character is stripped.
 - =&prompt=: optional prompt to print before reading the input. If a prompt is specified, then input/output is forced from the terminal (=/dev/tty=) instead of the input pipe, since the existence of a prompt presumes interactive use.
 
-#+begin_src elvish :exports both :use github.com/zzamboni/elvish-modules/util
+#+begin_src elvish :exports both :use github.com/LaurentFough/elvish-modules-zzamboni/util
 echo "hi there\nhow are you" | util:readline &nostrip
 echo "hi there.how are you" | util:readline &eol=.
 echo "hi there.how are you" | util:readline &eol=. &nostrip
@@ -151,7 +151,7 @@ drwxr-xr-x 8 root wheel 256 Oct 25 18:16 '/System/Library/Address Book Plug-Ins'
 
 Return the maximum/minimum in a list of numbers. If the =&with= option is provided, it must be a function which receives on argument and returns a number, which is used for the comparison instead of the actual values. In this case, the list elements can be anything, as long as the =&with= function returns a numeric value.
 
-#+begin_src elvish :exports both :use github.com/zzamboni/elvish-modules/util
+#+begin_src elvish :exports both :use github.com/LaurentFough/elvish-modules-zzamboni/util
 util:max 3 4 5 2 -1 4 0
 util:min 3 4 5 2 -1 4 0
 util:max a bc def ghijkl &with=$count~
@@ -170,7 +170,7 @@ util:min a bc def ghijkl &with=$count~
 
 In the example below, the values are scalars. Note that =:else= has no special significance - it's simply evaluated as a string, which represents a "booleanly true" value. Any other true value (e.g. =:default=, =$true=, etc.) could be used.
 
-#+begin_src elvish :exports both :use github.com/zzamboni/elvish-modules/util
+#+begin_src elvish :exports both :use github.com/LaurentFough/elvish-modules-zzamboni/util
 fn pos-neg-or-zero [n]{
   util:cond [
     { < $n 0 } "negative"
@@ -193,7 +193,7 @@ pos-neg-or-zero 0
 
 =path-in= follows a "path" within a nested map structure and gives you the element at the end.
 
-#+begin_src elvish :exports both :use github.com/zzamboni/elvish-modules/util
+#+begin_src elvish :exports both :use github.com/LaurentFough/elvish-modules-zzamboni/util
 util:path-in [&a=[&b=[&c=foo]]] [a b]
 util:path-in [&a=[&b=[&c=foo]]] [a b c]
 util:path-in [&a=[&b=[&c=foo]]] [a b d]
@@ -548,10 +548,10 @@ elvish util_test.elv
 #+end_src
 
 #+begin_src elvish :tangle (concat (file-name-sans-extension (buffer-file-name)) "_test.elv") :mkdirp yes :comments no :noweb yes
-use github.com/zzamboni/elvish-modules/test
-use github.com/zzamboni/elvish-modules/util
+use github.com/LaurentFough/elvish-modules-zzamboni/test
+use github.com/LaurentFough/elvish-modules-zzamboni/util
 
-(test:set github.com/zzamboni/elvish-modules/util [
+(test:set github.com/LaurentFough/elvish-modules-zzamboni/util [
     <<tests>>
 ])
 #+end_src

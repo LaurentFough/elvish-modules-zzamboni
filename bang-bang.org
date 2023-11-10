@@ -22,13 +22,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install github.com/zzamboni/elvish-modules
+epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module.
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/bang-bang
+use github.com/LaurentFough/elvish-modules-zzamboni/bang-bang
 #+end_src
 
 When you press =!=, you will see a menu showing you the different keys your can press, for example, if you try to execute a command that requires =root= privileges:

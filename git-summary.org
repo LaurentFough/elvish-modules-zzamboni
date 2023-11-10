@@ -21,16 +21,16 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install &silent-if-installed github.com/zzamboni/elvish-modules
+epm:install &silent-if-installed github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/git-summary
+use github.com/LaurentFough/elvish-modules-zzamboni/git-summary
 #+end_src
 
-This module includes the =git-summary:summary-status= function, which provides a status summary of git repositories, using the =git-combined=, =git-branch= and =git-timestamp= segments of the [[https://github.com/zzamboni/elvish-themes/blob/master/chain.org][chain]] prompt theme. The list is presented in reverse chronological order according to their latest git commit. I use this to get a quick summary of the status of my most commonly used repositories. The repositories to display can be provided in multiple ways (if more than one is specified, the first one found is used):
+This module includes the =git-summary:summary-status= function, which provides a status summary of git repositories, using the =git-combined=, =git-branch= and =git-timestamp= segments of the [[https://github.com/LaurentFough/elvish-themes/blob/master/chain.org][chain]] prompt theme. The list is presented in reverse chronological order according to their latest git commit. I use this to get a quick summary of the status of my most commonly used repositories. The repositories to display can be provided in multiple ways (if more than one is specified, the first one found is used):
 
 - Default behavior when no arguments nor options are given: read from a JSON file specified in =$git-summary:summary-repos-file= (default value: =~/.elvish/package-data/elvish-themes/git-summary-repos.json=). The contents of this file can be manipulated using the =git-summary:add-repo= and =git-summary:remove-repo= functions (see example below).
 - As arguments to the function, e.g. =git-summary:summary-status dir1 dir2=.
@@ -58,13 +58,13 @@ Repo /Users/taazadi1/.hammerspoon added to the list
 [2020-05-27] [OK] [⎇ master] ~/.emacs.d
 [2020-05-22] [OK] [⎇ master] ~/.hammerspoon
 
-[~/.elvish]─[⎇ master]─> git-summary:summary-status ~/.elvish/lib/github.com/zzamboni/*
-[2020-05-09] [OK] [⎇ master] ~/.elvish/lib/github.com/zzamboni/elvish-completions
-[2020-05-08] [OK] [⎇ master] ~/.elvish/lib/github.com/zzamboni/elvish-modules
-[2020-05-22] [●] [⎇ master] ~/.elvish/lib/github.com/zzamboni/elvish-themes
+[~/.elvish]─[⎇ master]─> git-summary:summary-status ~/.elvish/lib/github.com/LaurentFough/*
+[2020-05-09] [OK] [⎇ master] ~/.elvish/lib/github.com/LaurentFough/elvish-completions
+[2020-05-08] [OK] [⎇ master] ~/.elvish/lib/github.com/LaurentFough/elvish-modules-zzamboni
+[2020-05-22] [●] [⎇ master] ~/.elvish/lib/github.com/LaurentFough/elvish-themes
 
-[~/.elvish]─[⎇ master]─> git-summary:summary-status &only-dirty ~/.elvish/lib/github.com/zzamboni/*
-[2020-05-22] [●] [⎇ master] ~/.elvish/lib/github.com/zzamboni/elvish-themes
+[~/.elvish]─[⎇ master]─> git-summary:summary-status &only-dirty ~/.elvish/lib/github.com/LaurentFough/*
+[2020-05-22] [●] [⎇ master] ~/.elvish/lib/github.com/LaurentFough/elvish-themes
 #+end_src
 
 Note that this module automatically starts =gitstatusd= in the background (courtesy of the [[https://github.com/href/elvish-gitstatus/][elvish-gitstatus]] module). By default, =gitstatusd= stays running and is reused the next time you call the =git-summary:summary-status= function. If you prefer to kill =gitstatusd= after every run, you can set =$git-summary:stop-gitstatusd-after-use= to =$true=.
@@ -79,13 +79,13 @@ Load some libraries.
 
 #+begin_src elvish
   use path
-  use github.com/zzamboni/elvish-modules/spinners
+  use github.com/LaurentFough/elvish-modules-zzamboni/spinners
 #+end_src
 
-We use the segments from the [[file:~/.elvish/lib/github.com/zzamboni/elvish-themes/chain.org][Chain]] theme for the display, so we load that module.
+We use the segments from the [[file:~/.elvish/lib/github.com/LaurentFough/elvish-themes/chain.org][Chain]] theme for the display, so we load that module.
 
 #+begin_src elvish
-  use github.com/zzamboni/elvish-themes/chain
+  use github.com/LaurentFough/elvish-themes/chain
 #+end_src
 
 The list of repositories read from the file is cached in =$git-summary:summary-repos=.

@@ -18,13 +18,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install github.com/zzamboni/elvish-modules
+epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/util-edit
+use github.com/LaurentFough/elvish-modules-zzamboni/util-edit
 #+end_src
 
 The following functions are included:

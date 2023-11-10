@@ -23,13 +23,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install github.com/zzamboni/elvish-modules
+epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load the =dir= module. This automatically sets up the chdir hook to keep track of directory history:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/dir
+use github.com/LaurentFough/elvish-modules-zzamboni/dir
 #+end_src
 
 You can set up keybindings to navigate the directory history and to trigger the history chooser. The module includes two convenience functions =left-word-or-prev-dir= and =right-word-or-next-dir= which "do the right thing" depending on the contents of the current command. For example:
@@ -40,17 +40,17 @@ edit:insert:binding[Alt-f] = $dir:right-word-or-next-dir~
 edit:insert:binding[Alt-i] = $dir:history-chooser~
 #+end_src
 
-If you want the =cd= command to recognize a hyphen as "the previous directory", you need to set up an alias from =cd= to call =dir:cd= instead. You can use the [[https://github.com/zzamboni/elvish-modules/blob/master/alias.org][alias]] module for this:
+If you want the =cd= command to recognize a hyphen as "the previous directory", you need to set up an alias from =cd= to call =dir:cd= instead. You can use the [[https://github.com/LaurentFough/elvish-modules-zzamboni/blob/master/alias.org][alias]] module for this:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/alias
-alias:new cd "use github.com/zzamboni/elvish-modules/dir; dir:cd"
+use github.com/LaurentFough/elvish-modules-zzamboni/alias
+alias:new cd "use github.com/LaurentFough/elvish-modules-zzamboni/dir; dir:cd"
 #+end_src
 
 The =dir:cdb= function changes to the base directory of its given argument. For example, =dir:cdb ~/tmp/foo.txt= will cd to =~/tmp=. I usually set up an alias for =cdb= as well:
 
 #+begin_src elvish
-alias:new cdb "use github.com/zzamboni/elvish-modules/dir; dir:cdb"
+alias:new cdb "use github.com/LaurentFough/elvish-modules-zzamboni/dir; dir:cdb"
 #+end_src
 
 Please note that for the aliases to take effect, you need to add the following line at the end of your =rc.elv= file:
@@ -59,7 +59,7 @@ Please note that for the aliases to take effect, you need to add the following l
 -exports- = (alias:export)
 #+end_src
 
-See [[https://github.com/zzamboni/elvish-modules/blob/master/alias.org][alias.org]] for full usage instructions for the =alias= module.
+See [[https://github.com/LaurentFough/elvish-modules-zzamboni/blob/master/alias.org][alias.org]] for full usage instructions for the =alias= module.
 
 Some functions produce messages if you are at the beginning/end of the directory history, for example. By default these messages are simply printed to the terminal. If you want to customize how the message is produced (e.g. colorize it, or produce it in a way that does not disrupt your prompt when the commands are bound to keys), you can customize it by assigning a new lambda to the =$dir:print-message= variable, like this:
 

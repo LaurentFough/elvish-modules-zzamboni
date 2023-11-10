@@ -1,7 +1,7 @@
 use path
-use github.com/zzamboni/elvish-modules/spinners
+use github.com/LaurentFough/elvish-modules-zzamboni/spinners
 
-use github.com/zzamboni/elvish-themes/chain
+use github.com/LaurentFough/elvish-themes/chain
 
 var summary-repos = []
 

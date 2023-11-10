@@ -20,13 +20,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
 use epm
-epm:install github.com/zzamboni/elvish-modules
+epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-use github.com/zzamboni/elvish-modules/tinytex
+use github.com/LaurentFough/elvish-modules-zzamboni/tinytex
 #+end_src
 
 For now, the only function is =tinytex:install-by-file=, which takes a filename, searches for the package which contains that file, and installs it. If only one package matches the file, everything happens automatically:

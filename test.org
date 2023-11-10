@@ -21,13 +21,13 @@ Install the =elvish-modules= package using [[https://elvish.io/ref/epm.html][epm
 
 #+begin_src elvish
   use epm
-  epm:install github.com/zzamboni/elvish-modules
+  epm:install github.com/LaurentFough/elvish-modules-zzamboni
 #+end_src
 
 In your =rc.elv=, load this module:
 
 #+begin_src elvish
-  use github.com/zzamboni/elvish-modules/test
+  use github.com/LaurentFough/elvish-modules-zzamboni/test
 #+end_src
 
 ** Writing tests
@@ -61,19 +61,19 @@ Note that =test:check= returns a function, so to actually run the test, you need
 Test functions generated with =test:check=, =test:is= and =test:is-not= can be grouped using =test:set=, which takes an identifier and a list of test functions, which get executed in sequence. The list can also contain other =test:set= objects. Each nested =test:set= counts as a single test to its outer set, but it reports its own results.
 
 #+begin_src elvish
-  ~> use github.com/zzamboni/elvish-modules/util
-  ~> (test:set github.com/zzamboni/elvish-modules/util [
+  ~> use github.com/LaurentFough/elvish-modules-zzamboni/util
+  ~> (test:set github.com/LaurentFough/elvish-modules-zzamboni/util [
       (test:set dotify-string [
         (test:is { util:dotify-string "somelongstring" 5 } "somel…" Long string gets dotified)
         (test:is { util:dotify-string "short" 5 } "short" Equal-as-limit string stays the same)
         (test:is { util:dotify-string "bah" 5 } "bah" Short string stays the same)])])
-   Testing github.com/zzamboni/elvish-modules/util
-     Testing github.com/zzamboni/elvish-modules/util dotify-string
+   Testing github.com/LaurentFough/elvish-modules-zzamboni/util
+     Testing github.com/LaurentFough/elvish-modules-zzamboni/util dotify-string
        PASS Long string gets dotified (eq ( util:dotify-string "somelongstring" 5 ) somel…)
        PASS Equal-as-limit string stays the same (eq ( util:dotify-string "short" 5 ) short)
        PASS Short string stays the same (eq ( util:dotify-string "bah" 5 ) bah)
-     github.com/zzamboni/elvish-modules/util dotify-string results: 3/3 passed
-   github.com/zzamboni/elvish-modules/util results: 1/1 passed
+     github.com/LaurentFough/elvish-modules-zzamboni/util dotify-string results: 3/3 passed
+   github.com/LaurentFough/elvish-modules-zzamboni/util results: 1/1 passed
   ▶ $true
 #+end_src
 

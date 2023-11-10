@@ -1,6 +1,6 @@
 use str
 use path
-use github.com/zzamboni/elvish-modules/tty
+use github.com/LaurentFough/elvish-modules-zzamboni/tty
 
 var spinners = (from-json < (path:dir (src)[name])/spinners.json)
 
