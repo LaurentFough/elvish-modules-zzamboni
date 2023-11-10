@@ -1,7 +1,7 @@
 use path
 use github.com/LaurentFough/elvish-modules-zzamboni/spinners
 
-use github.com/LaurentFough/elvish-themes/chain
+use github.com/LaurentFough/elvish-themes-zzamboni/chain
 
 var summary-repos = []
 
@@ -9,7 +9,7 @@ var find-all-user-repos-fn = {
   fd -H -I -t d '^.git$' ~ | each $path:dir~
 }
 
-var repos-file = ~/.elvish/package-data/elvish-themes/git-summary-repos.json
+var repos-file = ~/.elvish/package-data/elvish-themes-zzamboni/git-summary-repos.json
 
 var stop-gitstatusd-after-use = $false
 

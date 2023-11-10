@@ -5,7 +5,7 @@
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 
-This Elvish package contains various modules I have written for the [[https://elv.sh/][Elvish shell]]. [[https://github.com/LaurentFough/elvish-themes/][Themes]] and [[https://github.com/LaurentFough/elvish-completions][completions]] are kept in separate packages.
+This Elvish package contains various modules I have written for the [[https://elv.sh/][Elvish shell]]. [[https://github.com/LaurentFough/elvish-themes-zzamboni][Themes]] and [[https://github.com/LaurentFough/elvish-completions-zzamboni][completions]] are kept in separate packages.
 
 * Compatibility
 
